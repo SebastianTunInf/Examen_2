@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+<body>
+    <script>
+    let rows = Number(prompt('Escriba cuantas filas quiere.'))
+    let columns = Number(prompt('Escriba cuantas columnas quiere.'))
+
+    let countdown = rows * columns
+    let countdownRows = rows
+    let countdownColumns = columns
+
+    var table = document.createElement("TABLE")
+    table.setAttribute("id", "myTable")
+    var row = document.createElement("TR")
+    row.setAttribute("id", "myRow")
+    var cell = document.createElement("TD")
+    var data = document.createTextNode(countdown)
+    
+    document.body.appendChild(table)
+    while (rows != 0) {  
+        document.getElementById("myTable").appendChild(row)
+        while (countdownColumns != 0) {
+        cell.appendChild(data)
+        document.getElementById("myRow").appendChild(cell)
+        countdownColumns = countdownColumns - 1
+        countdown = countdown - 1
+        }
+        countdownColumns = columns
+        rows = rows - 1
+    }
+    </script>
+    <script src="js/script_2.js"></script>
+</body>
+</html>
